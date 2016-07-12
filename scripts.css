@@ -1,5 +1,5 @@
 body {
-    background-color: #607D8B
+    background-color: #607D8B;
 }
 h1 {
     text-align: center;
@@ -21,7 +21,4 @@ div {
     50%{transform: rotate(180deg);}
     75%{transform: rotate(360deg);}
     100%{transform: rotate( 0deg);}
-}
-img {
-    display: none;
 }
