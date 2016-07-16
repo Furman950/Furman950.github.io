@@ -1,24 +1,6 @@
 body {
     background-color: #607D8B;
 }
-h1 {
-    text-align: center;
-}
 div {
     text-align: center;
-}
-#redCorvette:hover {
-    animation: car 3s;
-}
-#blueCorvette:hover {
-    animation: car 3s;
-}
-#greyCorvette:hover {
-    animation: car 3s;
-}
-@keyframes car {
-    0%{transform: rotate(0deg);}
-    50%{transform: rotate(180deg);}
-    75%{transform: rotate(360deg);}
-    100%{transform: rotate( 0deg);}
 }
