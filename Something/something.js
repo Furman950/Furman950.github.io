@@ -5,17 +5,15 @@ $(document).ready(function() {
             e.preventDefault();
             width = $(".movingName").width();
             input = $(".name").val();
-            $(this).addClass('hidden');
+            $(this).addClass("hidden");
             $(".movingName").append("<p>" + input + "</p>");
-            $(".movingName").animate({'marginLeft': "" + (width+50)}, 3500);
-            $(".movingName").animate({'marginLeft': '-500px'}, 1);
             
-            
-            $(".movingName").animate({"marginLeft" : "" + width/2}, 3500);
+            for (var i = 0; i < 3; i++){
+            $(".movingName").animate({"marginLeft": "" + (width+50)}, 3500);
+            $(".movingName").animate({"marginLeft": "-500px"}, 1);
+            $(".movingName").animate({"marginLeft": "" + (width/2)}, 3500);
+            }
             
         }
     });
-    
-    
-
 });
