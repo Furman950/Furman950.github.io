@@ -1,19 +1,19 @@
-var number, counter = 0, numTracker;
+var number, counter = 0,
+    numTracker;
 
-function numGen (){
+function numGen() {
     number = Math.floor((Math.random() * 9) + 1);
 }
 
-function checkIfMemeVis (){
-    if (counter > 0){
-    document.getElementById(""+number+"").style.display = "none";
+function checkIfMemeVis() {
+    if (counter > 0) {
+        document.getElementById("" + number + "").style.display = "none";
     }
-    counter++;    
+    counter++;
 }
 
-function memeGen () {
+function memeGen() {
     checkIfMemeVis();
     numGen();
-    document.getElementById(""+number+"").style.display = "inline";
-
+    document.getElementById("" + number + "").style.display = "inline";
 }

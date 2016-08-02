@@ -1,5 +1,7 @@
 body {
-    background-color: #607D8B;
+     background-image: url('../ferminbackground.png');
+    margin: 0;
+    padding: 0;
 }
 h1 {
     text-align: center;
@@ -13,12 +15,33 @@ div {
 #blueCorvette:hover {
     animation: car 3s;
 }
-#greyCorvette:hover {
-    animation: car 3s;
-}
 @keyframes car {
     0%{transform: rotate(0deg);}
     50%{transform: rotate(180deg);}
     75%{transform: rotate(360deg);}
     100%{transform: rotate( 0deg);}
+}
+nav{
+    background: black;
+    text-align: center;
+    padding-top: 5px;
+}
+li{
+    display: inline;
+    margin-right: 10px;
+    padding: 0 5px;
+}
+ul{
+    color: white;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+li:hover{
+    background: #273746;
+    cursor: pointer;
 }
