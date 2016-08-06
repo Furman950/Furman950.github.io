@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="Memes.css">
-        <title>Random Website</title>
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <li><a href='../index.html'>Go back home</a></li>
-            </ul>
-        </nav>
-        <div id="memes">
-            <img id="1" src="America.jpg">
-            <img id="2" src="billNye.jpg">
-            <img id="3" src="dishishes.jpg">
-            <img id="4" src="drama.jpg">
-            <img id="5" src="graduating.jpg">
-            <img id="6" src="humble.jpg">
-            <img id="7" src="photobomb.jpg">
-            <img id="8" src="spongebob.jpg">
-            <img id="9" src="women.jpg">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Memes.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Random Website</title>
+</head>
+
+<body>
+       <nav class='navbar navbar-inverse navbar-fixed-top'>
+        <div class='container-fluid'>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">Fermins Site</a>
+            </div>
+            <div class='collapse navbar-collapse' id='myNavbar'>
+                <ul class='nav navbar-nav navbar-left'>
+                    <li><a href="../corvette/myFutureCar.html">Car</a></li>
+                    <li class='active'><a href="../MemesPics/randomMemes.html">Random memes</a></li>
+                    <li><a href="../Something/something.html">Name transition</a></li>
+                    <li><a href="../background/background.html">Random background colors</a></li>
+                </ul>
+            </div>
         </div>
-        <div class = "container">
-            <br>
-            <button onclick="memeGen()" class = "col-xs-4 col-xs-offset-4">Click to laugh...</button>
-        </div>
-                
-        <script src="scripts.js"></script>
-    </body>
+    </nav>
+    <div id="memes">
+        <img id="1" src="America.jpg">
+        <img id="2" src="billNye.jpg">
+        <img id="3" src="dishishes.jpg">
+        <img id="4" src="drama.jpg">
+        <img id="5" src="humble.jpg">
+        <img id="6" src="photobomb.jpg">
+        <img id="7" src="women.jpg">
+    </div>
+    <div class="container">
+        <br>
+        <button onclick="memeGen()" class='btn btn-default'>Click for memes</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
 </html>

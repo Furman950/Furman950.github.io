@@ -1,33 +1,40 @@
 body {
-    background-color: #D32F2F;
     margin: 0;
     padding: 0;
+    padding-top: 70px;
+    background-color: #D32F2F;
 }
+
 #button {
-    position:absolute;
+    position: absolute;
     top: 50px;
 }
-nav{
+
+nav {
     background: black;
     text-align: center;
     padding-top: 5px;
 }
-li{
+
+li {
     display: inline;
     margin-right: 10px;
     padding: 0 5px;
 }
-ul{
+
+ul {
     color: white;
     font-size: 15px;
     margin: 0;
     padding: 0;
 }
-a{
+
+a {
     color: white;
     text-decoration: none;
 }
-li:hover{
+
+li:hover {
     background: #273746;
     cursor: pointer;
 }

@@ -2,7 +2,7 @@ var number, counter = 0,
     numTracker;
 
 function numGen() {
-    number = Math.floor((Math.random() * 9) + 1);
+    number = Math.floor((Math.random() * 7) + 1);
 }
 
 function checkIfMemeVis() {

@@ -8,12 +8,13 @@ $(document).ready(function() {
             $(this).addClass("hidden");
             $(".movingName").append("<p>" + input + "</p>");
             
-            for (var i = 0; i < 3; i++){
-            $(".movingName").animate({"marginLeft": "" + (width+50)}, 3500);
-            $(".movingName").animate({"marginLeft": "-500px"}, 1);
-            $(".movingName").animate({"marginLeft": "" + (width/2)}, 3500);
-            }
-            
+            setInterval (function () {
+                $(".movingName").animate({"marginLeft": "" + (width+50)}, 3500, function(){
+                    $(this).css('font-size', '200px');
+                });
+                $(".movingName").animate({"marginLeft": "-700px"}, 1);
+                $(".movingName").animate({"marginLeft": "" + (width/2)-100}, 3500);
+            }, 1000);
         }
     });
 });

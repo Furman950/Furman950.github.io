@@ -1,7 +1,8 @@
 body {
-    background-image: url('../ferminbackground.png');
     margin: 0;
     padding: 0;
+    padding-top: 70px;
+    background-image: url('../ferminbackground.png');
 }
 nav{
     background: black;
