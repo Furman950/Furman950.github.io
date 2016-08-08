@@ -1,5 +1,4 @@
-var number, counter = 0,
-    numTracker;
+var number, counter = 0, numTracker;
 
 function numGen() {
     number = Math.floor((Math.random() * 8) + 1);
