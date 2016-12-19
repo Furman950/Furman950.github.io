@@ -13,9 +13,10 @@ function Snake() {
     
     this.eat = function(pos) {
         var d = dist(this.x, this.y, pos.x, pos.y);
-    
+        
         if (d < 1) {
             this.total++;
+            console.log("true");
             return true;
        }
         else {
@@ -23,15 +24,37 @@ function Snake() {
         }
     }
     
-    this.update = function() {
-        var len =this.tail.length - 1;
+    this.death = function() {
         
-        if(this.total === len + 1){
-            for(var i = 0; i < len; i++){
-                this.tail [i] = this.tail[i+1];
+        for (var i = 0; i < this.tail.length; i++){
+            var pos = this.tail[i];
+            var d = dist(this.x, this.y, pos.x, pos.y);
+            
+            if (d < 1) {
+                this.total = 0;
+                this.tail = [];
+                var replay = confirm("You lose :(\nYou want to play again?");
+                if(replay){
+                    console.log("true");
+                    return true;
+                }
+                else{
+                    console.log("false");
+                    return false;   
+                }
+                
             }
         }
         
+    }
+    
+    this.update = function() {
+        
+        if(this.total === this.tail.length){
+            for(var i = 0; i < this.tail.length - 1; i++){
+                this.tail [i] = this.tail[i+1];
+            }
+        }
         
         this.tail[this.total-1] = createVector(this.x, this.y);
         
@@ -45,13 +68,10 @@ function Snake() {
     this.show = function() {
         fill(255);
         
-        var len = this.tail.length;
-        
-        for (var i = 0; i < len; i++){
+        for (var i = 0; i < this.tail.length; i++){
             rect(this.tail[i].x, this.tail[i].y, scl, scl);
         }
         
         rect(this.x, this.y, scl, scl);
     };
-    
 }
