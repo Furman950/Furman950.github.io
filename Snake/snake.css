@@ -1,11 +1,28 @@
 body {
-  margin: 0;
-  display: flex;
-
-  /* This centers our sketch horizontally. */
-  justify-content: center;
-
-  /* This centers our sketch vertically. */
-  align-items: center;
   background-color: orange;
+}
+
+h1 {
+  text-align: center;
+}
+
+div {
+  text-align: center;
+  position: relative;
+}
+
+form {
+  text-align: center;
+  display: inline-block;
+  background-color: #307CC9;
+  border-radius: 10px;
+  visibility: hidden;
+}
+
+p,
+button {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
 }

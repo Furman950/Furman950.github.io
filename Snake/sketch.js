@@ -1,15 +1,19 @@
-var s;
+var s, dead;
 var scl = 20;
 
-var food, score = -1;
+var food, score = -1,
+    level = 1,
+    speed = 20;
 
-function setup(){
-    createCanvas(600, 600);
+function setup() {
+    var canvas = createCanvas(600, 600);
+    canvas.parent('canvasHolder');
     s = new Snake();
-    frameRate(20);
+    frameRate(speed);
     pickLocation();
 }
-function restartGame(){
+
+function restartGame() {
     score = -1;
     s.x = 0;
     s.y = 0;
@@ -17,47 +21,58 @@ function restartGame(){
     s.yspeed = 0;
     pickLocation();
 }
+function mousePressed(){
+    if (dead){
+        restartGame();
+        dead = false;
+    }
+    
+}
 function pickLocation() {
-    var cols = floor(width/scl);
-    var rows = floor(height/scl);
+    var cols = floor(width / scl);
+    var rows = floor(height / scl);
     food = createVector(floor(random(cols)), floor(random(rows)));
     food.mult(scl);
     score++;
 }
 
-function draw(){
+function draw() {
     background(51);
     fill(255, 255, 255);
-    text("Score: " + score, 280 , 25);
+    text("Score: " + score, 280, 25);
 
-  if (s.eat(food)) {
-      console.log("Food");
-    pickLocation();
-  }
-  
-  if(s.death()){
-      restartGame();
-  }
-  
-  s.update();
-  s.show();
+    if (s.eat(food)) {
+        console.log("Food");
+        pickLocation();
+    }
 
-  fill(13, 0, 255);
-  rect(food.x, food.y, scl, scl);
+    if (s.death()) {
+        restartGame();
+    }
+    
+    if(s.death() == false){
+        score = -1;
+    }
+    
+    s.update();
+    s.show();
+
+    fill(13, 0, 255);
+    rect(food.x, food.y, scl, scl);
 }
 
 function keyPressed() {
-    keyCode === UP_ARROW && s.yspeed != 1 ? s.dir(0, -1) : false; 
-    
-    if (keyCode === DOWN_ARROW && s.yspeed != -1){
+    keyCode === UP_ARROW && s.yspeed != 1 ? s.dir(0, -1) : false;
+
+    if (keyCode === DOWN_ARROW && s.yspeed != -1) {
         s.dir(0, 1);
     }
-    
-    else if (keyCode === RIGHT_ARROW && s.xspeed != -1){
+
+    else if (keyCode === RIGHT_ARROW && s.xspeed != -1) {
         s.dir(1, 0);
     }
-        
-    else if (keyCode === LEFT_ARROW && s.xspeed != 1){
+
+    else if (keyCode === LEFT_ARROW && s.xspeed != 1) {
         s.dir(-1, 0);
     }
 }
